@@ -156,8 +156,8 @@
         "webpack-merge": "^5.8.0"
     },
     "build": {
-        "productName": "Dub Editor",
-        "appId": "com.trinary.dub-editor",
+        "productName": "Dub Launcher",
+        "appId": "com.trinary.dub-launcher",
         "asar": true,
         "asarUnpack": [
             "**\\*.{node,dll}",
@@ -222,8 +222,8 @@
         ],
         "publish": {
             "provider": "github",
-            "owner": "dub-editor",
-            "repo": "dub-editor"
+            "owner": "dub-launcher",
+            "repo": "dub-launcher"
         }
     },
     "collective": {
