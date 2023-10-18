@@ -27,7 +27,7 @@ import { interstitialAtom } from './atoms/interstitial.atom';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-const VERSION = 'v1.6.0-beta';
+const VERSION = 'v2.1.0-beta';
 
 let App = (props) => {
     const navigate = useNavigate();
