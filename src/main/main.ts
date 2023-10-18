@@ -41,8 +41,8 @@ const HOME: string =
     process.platform === 'darwin'
         ? process.env.HOME || '/'
         : `${process.env.HOMEDRIVE}${process.env.HOMEPATH}/AppData/Local/DubEditor`;
-const CONFIG_FILE: string = `${HOME}/.dub-editor-config.json`;
-const COLLECTIONS_FILE: string = `${HOME}/.dub-editor-collections.json`;
+const CONFIG_FILE: string = `${HOME}/.dub-launcher-config.json`;
+const COLLECTIONS_FILE: string = `${HOME}/.dub-launcher-collections.json`;
 const BATCH_CACHE_FILE: string = `${HOME}/.dub-editor-batch-cache.json`;
 const BATCH_VIDEO_TEMP_FILE: string = `${HOME}/dub-editor-batch-tmp.mp4`;
 const CLIP_VIDEO_TEMP_FILE: string = `${HOME}/dub-editor-clip-tmp.mp4`;
@@ -182,12 +182,15 @@ const importZip = async (filePath: string, game: string) => {
     const sourceSubtitlesDirectory = `${subtitleSource}/`;
     const targetVideoDirectory = `${gameDirectory}/${videoCorrectionStack.join(
         '/'
-    )}${videoDirectoryStack.join('/')}`;
+    )}/${videoDirectoryStack.join('/')}`;
     const targetSubtitlesDirectory = `${gameDirectory}/${subtitleCorrectionStack.join(
         '/'
-    )}${subtitleDirectoryStack.join('/')}`;
+    )}/${subtitleDirectoryStack.join('/')}`;
 
     Object.values(entries).forEach((entry: any) => console.log(entry.name));
+
+    console.log("TARGET VIDEO: " + targetVideoDirectory);
+    console.log("TARGET SUBTITLES: " + targetSubtitlesDirectory);
 
     // Try with standard directory names
     await zip.extract(sourceVideoDirectory, targetVideoDirectory);

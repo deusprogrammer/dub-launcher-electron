@@ -27,7 +27,7 @@ import { interstitialAtom } from './atoms/interstitial.atom';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-const VERSION = 'v1.4.0-beta';
+const VERSION = 'v1.6.0-beta';
 
 let App = (props) => {
     const navigate = useNavigate();
@@ -62,7 +62,7 @@ let App = (props) => {
     ) {
         return (
             <div className="App">
-                <h1>Dub Editor</h1>
+                <h1>Dub Launcher</h1>
                 <hr />
                 <div>{VERSION}</div>
                 <hr />
@@ -83,7 +83,7 @@ let App = (props) => {
             </Interstitial>
             {location.pathname !== `/create/${game}` ? (
                 <div>
-                    <h1>Dub Editor</h1>
+                    <h1>Dub Launcher</h1>
                     <hr />
                     <div>{VERSION}</div>
                     <label>Game:</label>
@@ -101,18 +101,9 @@ let App = (props) => {
                         className={({ isActive }) =>
                             isActive ? 'active' : null
                         }
-                        to={`/videos/${game}`}
-                    >
-                        Clips
-                    </Link>
-                    |
-                    <Link
-                        className={({ isActive }) =>
-                            isActive ? 'active' : null
-                        }
                         to={`/collections/${game}`}
                     >
-                        Packs
+                        Launcher
                     </Link>
                     |
                     <Link
@@ -140,42 +131,14 @@ let App = (props) => {
                     <Route exact path={`/config/:game`} element={<Config />} />
                     <Route
                         exact
-                        path={`/batch/:type`}
-                        element={<ClipCutter game={game} />}
-                    />
-                    <Route
-                        exact
-                        path={`/create/:type`}
-                        element={<ClipEditor game={game} />}
-                    />
-                    <Route
-                        exact
-                        path={`/create/advanced/:type`}
-                        element={<AdvancedEditor />}
-                    />
-                    <Route
-                        exact
-                        path={`/create/simple/:type`}
-                        element={<SimpleEditor />}
-                    />
-                    <Route
-                        exact
                         path={`/collections/:game`}
                         element={<CollectionManager />}
                     />
                     <Route
-                        exact
-                        path={`/videos/:game`}
-                        element={<VideoList />}
-                    />
-                    <Route
-                        exact
-                        path={`/videos/:game/:id`}
-                        element={<VideoView />}
-                    />
-                    <Route
                         path="*"
-                        element={<Navigate to="/videos/rifftrax" replace />}
+                        element={
+                            <Navigate to="/collections/rifftrax" replace />
+                        }
                     />
                 </Routes>
             </div>

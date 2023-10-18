@@ -46,29 +46,6 @@ const Config = (props) => {
         }
     };
 
-    const otherConfig = (
-        <table style={{ margin: 'auto' }}>
-            <tbody>
-                <tr>
-                    <td>Default Editor</td>
-                    <td>
-                        <select
-                            value={config.editor}
-                            onChange={({ target: { value } }) => {
-                                updateConfig('editor', value);
-                                save({ ...config, editor: value });
-                            }}
-                        >
-                            <option>None</option>
-                            <option value="simple">Simple</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    );
-
     if (config.isMac) {
         return (
             <div>
@@ -77,7 +54,6 @@ const Config = (props) => {
                     You are running on Mac so the directories have been set to
                     the defaults.
                 </p>
-                {otherConfig}
             </div>
         );
     }
@@ -142,7 +118,6 @@ const Config = (props) => {
                     </tr>
                 </tbody>
             </table>
-            {otherConfig}
             {props.onRefresh ? (
                 <button
                     onClick={() => {

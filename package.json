@@ -1,6 +1,6 @@
 {
-    "description": "An application for creating and managing clips for What the Dub and Rifftrax",
-    "version": "2.0.0",
+    "description": "An application for launching clip packs for What the Dub and Rifftrax",
+    "version": "1.6.0",
     "keywords": [
         "electron",
         "boilerplate",

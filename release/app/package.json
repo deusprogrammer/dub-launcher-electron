@@ -1,7 +1,7 @@
 {
-    "name": "dub-editor-electron",
-    "version": "2.0.0-beta",
-    "description": "A dub editor for What the Dub and Rifftrax games by Wide Right Studios",
+    "name": "dub-launcher-electron",
+    "version": "1.6.0-beta",
+    "description": "An application for launching clip packs for What the Dub and Rifftrax",
     "license": "MIT",
     "author": {
         "name": "Michael C. Main",
