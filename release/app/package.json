@@ -1,6 +1,6 @@
 {
     "name": "dub-launcher-electron",
-    "version": "1.6.0-beta",
+    "version": "2.1.0-beta",
     "description": "An application for launching clip packs for What the Dub and Rifftrax",
     "license": "MIT",
     "author": {
