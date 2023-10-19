@@ -123,6 +123,13 @@ let App = (props) => {
                     >
                         About
                     </Link>
+                    |
+                    <a
+                        href="https://ko-fi.com/michaelcmain52278"
+                        target="_blank"
+                    >
+                        Donate
+                    </a>
                 </div>
             ) : null}
             <div style={{ minHeight: '50vh' }}>

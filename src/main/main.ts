@@ -624,8 +624,8 @@ const createWindow = async () => {
     menuBuilder.buildMenu();
 
     // Open urls in the user's browser
-    mainWindow.webContents.setWindowOpenHandler((edata) => {
-        shell.openExternal(edata.url);
+    mainWindow.webContents.setWindowOpenHandler(({url}) => {
+        shell.openExternal(url);
         return { action: 'deny' };
     });
 
